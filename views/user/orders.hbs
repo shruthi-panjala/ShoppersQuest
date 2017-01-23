@@ -1,0 +1,49 @@
+<div class="container">
+    <h2 align="center"></h2>
+    {{#if orders}}
+        {{#each orders}}
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <div class="row">
+                        <h1>{{this.name}}</h1>
+                    </div>
+                </div>
+                <div class="panel-body">    
+                    {{#each this.cart}}
+                        <div class="row" id="cart-row">
+                            <div class="col-md-3"><!-- image div -->
+                                <a href="/product/{{this.title}}"><img src="{{this.item.url}}" alt="No picture available" width="230px" ></a>
+                            </div>
+                            <div class="col-md-3"><!-- product details-->
+                                <a href="/product/{{this.title}}"><h5><span style="text-transform: none; font-size:25px">{{this.item.title}}</span></h5></a>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <div class="col-md-1">
+                                        <div class="badge" id="quantity" style="font-size:15px"><b>{{this.qty}}</b></div>
+                                    </div>
+                                    <div class="col-md-6 ">
+				                        <h6 align="right"><strong style="font-size:20px">Rs.{{this.price}} <span class="text-muted"></span></strong></h6>
+				                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {{/each}}    
+                </div>
+                <div class="panel-footer">
+                    <div class="row text-center">
+                        <div class="col-xs-8 col-md-8">
+                            <div class="col-md-4">
+						      <h4 class="text-right" style="font-size:20px">Total: <strong>Rs.{{this.totalPrice}}</strong></h4>
+                            </div>
+				        </div>
+                    </div>
+                </div>
+            </div>
+        {{/each}}
+    {{else}}
+        <div class="container"> 
+                <h3>No Orders placed!</h3>
+        </div>
+    {{/if}}
+</div>

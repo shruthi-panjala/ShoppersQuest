@@ -1,0 +1,94 @@
+<header id="header" >
+    <div class="header-middle"><!--header-middle-->
+			<div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-2 ">
+						<div class="logo pull-left">
+                           <a href="/"><img src="/images/shopq.png" style="width:200px; height:100px" /></a>
+                           <!-- <span style="color:black;"><h4>shoppersQuest</h4></span>-->
+						</div>
+                    </div>
+                    <div class="search-bar col-md-7 row1">
+                        <form method="post">
+                            <input class="search-bar-input col-md-10" id="bar" type="" placeholder="Search" name="searchbar"> <!--name="searchItem-->
+                            <a id="a"><button class="search-bar-button col-md-2"><span class="glyphicon glyphicon-search"></span></button></a>
+                        </form>
+                    </div>
+                    <div class="btn-group row1" role="group">
+                        <a href="/cart">
+                            <button class="cart-button col-md-1 "><span class="glyphicon glyphicon-shopping-cart" style="color:white"></span>
+                            <span style="color:white;padding-left:2px">CART </span><span class="badge" id="cart-numbers" style="color:blue; background:white">{{session.cart.totalQty}}</span></button>
+                        </a>
+                    </div>
+                    <div class="btn-group row1" role="group">
+                        <a href="/wishlist"><button class="cart-button col-md-1 ">
+                            <i class="glyphicon glyphicon-heart" style="color:white"></i>
+                            <span style="color:white; padding-left:4px">WISHLIST </span>
+                            <span class="badge" id="wishlist-numbers" style="color:blue; background:white">{{session.wishlist.totalQty}}</span>
+                            </button>
+                        </a>
+                    </div>
+                    
+                    <ul class="nav navbar-nav navbar-right col-md-1 row1">
+                        
+                        <!--<li class="btn-head"><a href="/checkout"><i class="fa fa-user-md"></i>Checkout</a></li>-->
+                        <li class="dropdown">
+                            <a href="#" class="btn-head dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="color:black;font-size:18px"><span class="glyphicon glyphicon-user"></span> Account<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                {{# if login}}
+                                    <li style="font-size:18px"><a href="/user/profile"><i class="fa fa-user" aria-hidden="true"></i> Profile</a></li>
+                                    <li style="font-size:18px"><a href="/user/orders"><i class="fa fa-history" aria-hidden="true"></i>History</a></li>
+                                    <li style="font-size:18px"><a href="/user/logout"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
+                                {{else}}
+                                    <li style="font-size:18px"><a href="/user/signup"><i class="fa fa-user" aria-hidden="true"></i> Sign Up</a></li>
+                                    <li style="font-size:18px"><a href="/user/signin"><i class="fa fa-sign-out" aria-hidden="true"></i> Sign In</a></li>
+                                {{/if}}
+                            </ul>
+                        </li>
+                    
+                        </ul>
+                </div>
+               <!-- <div class="row row1">
+					<div class="col-md-2 ">-->
+						<!--<div class="logo pull-left">
+                            <a href="#"><img src="images/home/logo.png" alt="" /></a>
+						</div>-->
+                   <!-- </div>-->
+                  <!--  <div class="search-bar col-md-7">
+                        <form method="post">
+                            <input class="search-bar-input col-md-10" id="bar" type="" placeholder="Search" name="searchbar"> name="searchItem
+                            <a id="a"><button class="search-bar-button col-md-2"><span class="glyphicon glyphicon-search"></span></button></a>
+                        </form>
+                    </div>-->
+                    
+                    <!--<div class="btn-group" role="group">
+                        <a href="/cart">
+                            <button class="cart-button col-md-1"><span class="glyphicon glyphicon-shopping-cart" style="color:white"></span>
+                            <span style="color:white;padding-left:2px">CART </span><span class="badge" id="cart-numbers" style="color:blue; background:white">{{session.cart.totalQty}}</span></button>
+                        </a>
+                    </div>-->
+                  <!--  <div class="btn-group" role="group">
+                        <a href="/wishlist"><button class="cart-button col-md-1">
+                            <i class="glyphicon glyphicon-heart" style="color:white"></i>
+                            <span style="color:white; padding-left:4px">WISHLIST </span>
+                            <span class="badge" id="wishlist-numbers" style="color:blue; background:white">{{session.wishlist.totalQty}}</span>
+                            </button>
+                        </a>
+                    </div>-->
+                    <!--<span class="glyphicon glyphicon-th-list" style="color:black;"></span>-->
+                <!--</div>
+                <div class="row row1">
+                </div>-->
+       <!-- </div>-->
+    </div>
+    </div>
+</header>
+<script type="text/javascript">
+  function search(){
+    var text=document.getElementById("bar").value;
+      console.log(text);
+      //document.getElementById("a").setAttribute("href", "/search/"+text+"");
+  }
+</script>
+
+

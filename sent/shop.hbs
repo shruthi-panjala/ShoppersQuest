@@ -1,0 +1,82 @@
+<div class="container-fluid">
+<div class="row-fluid">
+<div class="col-md-3 col-sm-3">
+<div class="left-sidebar">
+
+
+<div class="brands_products"><!--brands_products-->
+<h2>Brands</h2>
+<div class="brands-name">
+<ul class="nav nav-pills nav-stacked">
+<li><a href=""> <span class="pull-right">(50)</span>Acne</a></li>
+<li><a href=""> <span class="pull-right">(56)</span>Grüne Erde</a></li>
+<li><a href=""> <span class="pull-right">(27)</span>Albiro</a></li>
+<li><a href=""> <span class="pull-right">(32)</span>Ronhill</a></li>
+<li><a href=""> <span class="pull-right">(5)</span>Oddmolly</a></li>
+<li><a href=""> <span class="pull-right">(9)</span>Boudestijn</a></li>
+<li><a href=""> <span class="pull-right">(4)</span>Rösch creative culture</a></li>
+</ul>
+</div>
+</div><!--/brands_products-->
+                        
+                        
+<div class="price-range"><!--price-range-->
+<h2>Price Range</h2>
+<div class="well">
+<input type="text" class="span2" value="" data-slider-min="0" data-slider-max="600" data-slider-step="5" data-slider-value="[250,450]" id="sl2" ><br />
+<b>$ 0</b> <b class="pull-right">$ 600</b>
+</div>
+</div><!--/price-range-->
+
+
+</div>
+</div>
+    
+<div class="col-md-9 col-sm-9  pull-right">
+<div class="single-product-area">
+        <div class="zigzag-bottom"></div>
+        <div class="container">
+             {{# each products }}
+            <div class="row">
+                {{# each this}}
+                <div class="col-md-3 col-sm-6">
+                   
+                    <div class="thumbnail" id="single-shop-product">
+                        
+                        <div class="product-upper">
+                            <img src="{{this.url}}" alt="">
+                            
+                        </div>
+                        <h5><a href="" class="title">{{this.title}}<!--Apple new mac book 2015 March :P--></a></h5>
+                        <div class="pull-left" id="price-padding">
+                            <ins>Rs.{{this.price}}<!--$899.00--></ins> <del>$999.00</del>
+                        </div>  
+                        
+                       <!-- <div class="product-option-shop">
+                            <a href="/addToCart/{{this._id}}" class="add_to_cart_button" role="button">Add to cart</a>
+                        </div> -->
+                        
+                        
+                          <div class="" id="cartBtn">
+                              <div class="col-md-2 col-md-push-6">
+              <a href="#" class=" pull-right">
+                  <button type="submit" class="btn btn-inverse btn-circle btn-lg" name="addToWish" id="addToWish" value="" onclick="wishListCounter('{{this._id}}')">
+                      <i class="glyphicon glyphicon-heart"></i><!--<i class="fa fa-gratipay fa-2x" aria-hidden="true"></i>--></button></a></div>
+                               <div class="col-md-2 col-md-pull-8">
+              <a href="/add-to-cart/{{this.title}}" class="pull-left">
+                  <button class="btn btn-success btn-circle btn-lg" role="button"><i class="fa fa-shopping-cart" aria-hidden="true"></i></button></a></div>
+      </div>
+                           
+                           
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+            {{/each}}
+    </div>
+    </div>
+    </div>
+    </div>
+</div>
+
+<!-- ********************************************************************************************888-->

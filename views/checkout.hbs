@@ -1,0 +1,330 @@
+<script type="text/javascript">
+$(document).ready(function() {
+    $("#accordion").accordion();
+    $("#Form1").validate({
+        rules: {
+            userName: {
+                required: true
+            }
+         
+        },
+        ignore: []
+    });
+});
+</script>
+<div class="container">
+    
+<section class="header_text sub">
+			<img class="pageBanner" src="/images/backg2.png" alt="New products" >
+				
+     </section>
+   <div class="well" id="total">
+       <h3 align="center"><span>Check Out</span></h3>
+    <h4 align="center"><strong>Your Total:Rs.{{total}}</strong></h4>
+  
+    </div>
+			
+    <section class="main-content">
+<div class="panel-group" id="accordion">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+        <span style="color: #D43653 ;">
+      <h4 class="panel-title">
+          <a href="#">
+        CheckOut Options</a>
+      </h4>
+            </span>
+    </div>
+    <div id="collapse1" class="panel-collapse collapse in">
+      <div class="panel-body">
+         <div class="row">
+             <div class="col-md-6 col-sm-6">
+<!--<div class="span6">-->
+<h4>New Customer</h4>
+<p>By creating an account you will be able to shop faster, be up to date on an order's status, and keep track of the orders you have previously made.</p>
+                 <!-- new customer -->
+  <div class="form-group">
+      <form name="checkoutOptions" action="#" method="post">
+                <input type="radio" value="1" name="register" id="old" onclick="flowFunc(this);"/>
+      <label for="register">Register Account</label><br/>
+        <input type="radio" value="2" name="register" id="new" onclick="flowFunc(this);"/>
+      <label for="register">Guest checkout</label><br/>
+          <!--<button class="btn btn-primary" role="button">Continue</button>-->
+          <span id="guestBtn"  style="display:none">
+          	<button type="submit" class="btn btn-inverse" data-toggle="collapse" data-parent="#accordion" href="#collapse2">Continue</button></span>
+          </form>
+                 </div>
+	</div>
+             <!-- end of new customer -->
+                             <div id="customer-login"> 
+             <div class="col-md-6 col-sm-6">
+
+                 <h4>Returning Customer</h4>
+                 <p>I am a returning customer</p>
+                 <span style="color:red; display: none" id="alertMsg1">Please Enter Details</span>
+             <div class="form-group">
+      <form class="form-horizontal" id="Form1" action="#" method="post"> 
+         <label class="control-label">UserName</label><br/>
+
+        <input type="text" id="userName" name="userName" class="form-control" placeholder="Enter Username"
+               style="width: 300px; padding: 2px; border:1px solid black;" class="required" />
+      <br/>
+           <label class="control-label">Password</label><br/>
+
+                <input type="password" id="password" name="password" class="form-control" placeholder="Enter Password" 
+                       style="width: 300px; padding: 2px; border:1px solid black;" class="required" />
+      <br/>
+      
+          <!--<button class="btn btn-primary" role="button">Continue</button>-->
+          		<a href="#" id="a" data-toggle="collapse" data-parent="#accordion"><button type="submit" class="btn btn-inverse"   onclick="validate()">Continue</button></a>
+          	
+          	
+          </form>
+                 </div>
+             </div>
+                 </div>
+        </div>
+    </div>
+  </div>
+      
+      
+      
+      <!-- end of one accordion -->
+      
+      
+      
+  <div class="panel panel-default">
+    <div class="panel-heading">
+         <span style="color: #D43653 ;">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#">
+        Account & Shipping Details</a>
+      </h4>
+        </span>
+    </div>
+    <div id="collapse2" class="panel-collapse collapse">
+      <div class="panel-body">
+           <form class="form-horizontal" id="Form2" action="#" method="post">
+         
+               <div class="alert alert-danger alert-dismissible" id="alertMsg2" style="display:none;">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+   <h4 align="center"> <strong>ERROR..!</strong> Please Enter all (*)required fields</h4>
+  </div>
+               
+               <!--<span style="color:red; display: none" id="alertMsg2">Please Enter all (*)required fields</span>-->
+               <div class="row-fluid">
+                   
+		<div class="col-md-6 col-sm-6">									
+<h4>Your Personal Details</h4>
+ 
+    <label class="control-label">First Name</label><span class="required">*</span><br/>
+<input type="text" id="firstname" placeholder="First Name" class="form-control" style="width:300px;" onblur="first(this)"><br/>
+            <div><span id="text-area" style="color:red"></span></div>
+<label class="control-label">Last Name</label><br/>												
+<input type="text" id="lastname" placeholder="Last Name" class="form-control" style="width:300px;"><br/>	
+            
+<label class="control-label">Email Address</label> <br/>
+<input type="email" id="email" placeholder="example@gmail.com" class="form-control" style="width:300px;" onblur="emailValidation(this)"><br/>
+            <div><span id="em" style="color:red"></span></div>
+            
+<label class="control-label">Telephone</label><span class="required">*</span>  <span id="number" style="color:red"></span><br/>
+<input type="text" id="telephone" placeholder="" class="form-control" style="width:300px;" oninput="numericValidation(this);"><br/>
+            
+<label class="control-label">Fax</label> <span id="number" style="color:red"></span><br/>
+<input type="text" id="fax" placeholder="" class="form-control" style="width:300px;" oninput="numericValidation(this);"><br/>
+				
+					</div>
+                <!--*************************************end of one column***************************************************-->
+                <div class="col-md-6 col-sm-6">
+                		<h4>Your Address</h4>
+                    
+<label class="control-label">Company</label><br/>
+<input type="text" id="company" placeholder="" class="form-control" style="width:300px;"><br/>
+                    
+<label class="control-label">Company ID:</label><br/>
+<input type="text" id="cid" placeholder="" class="form-control" style="width:300px;"><br/>
+                    
+<label class="control-label"><span class="required">*</span> Address 1:</label><br/>
+                    <textarea rows="4" cols="50" type="text" id="add1" placeholder="" class="form-control" style="width:300px;" required="required"></textarea><br/>
+                    
+<label class="control-label">Address 2:</label><br/>
+<input type="text" id="add2" placeholder="" class="form-control" style="width:300px;"><br/>
+
+<label class="control-label"><span class="required">*</span> Country:</label><br/>
+                    <div class="dropdown">
+					
+<!--
+						<label for="entercountry"><span class="required">*</span>Country</label>
+-->
+						<select Name="Country" id="country" class="form-control"  onchange="cityChange(this);">
+						<option value="empty">Select Country</option>
+								<option value="India">India</option>
+								<option value="Germany">Germany</option>
+								<option value="Italy">Italy</option>
+								<option value="France">France</option>
+								<option value="Iceland">Iceland</option>
+						</select>
+                        <label for="entercity"><span class="required">*</span>Region/state</label>
+						<select name="region" id="region" class="form-control">
+								<span style="display: block; width: 5em;">
+								<!--<option value="0">Select Region</option>
+									<option value="Hyderabad">Hyderabad</option>
+									<option value="Basel">Basel</option>
+									<option value="Rome">Rome</option>
+									<option value="Paris">Paris</option>
+									<option value="Akranes">Akranes</option>--> 
+							</span>
+						</select>
+					
+				</div>
+                    <label class="control-label"><span class="required">*</span> City:</label><br/>
+<input type="text" id="city" placeholder="" class="form-control" style="width:300px;" required="required"><br/>
+                    <label class="control-label"><span class="required">*</span> Post Code:</label><span id="pin-area" style="color:red"></span><br/>
+<input type="numeric" id="postcode" placeholder="" class="form-control" style="width:300px;" oninput="pinValidation(this);" required="required"><br/>
+                   
+                    <!--<a  id="b" data-toggle="collapse" data-parent="#accordion" href="#"><button type="submit" class="btn btn-inverse" onclick="insert()">Continue</button></a>-->
+                    <a  id="b" data-toggle="collapse" data-parent="#accordion" href="#collapse3"><button type="submit" class="btn btn-inverse" onclick="">Continue</button></a>
+                </div>
+          </div>
+          </form>	
+        </div><!--panel body-->
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+         <span style="color: #D43653 ;">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#">
+        Payment Method</a>
+      </h4>
+        </span>
+    </div>
+    <div id="collapse3" class="panel-collapse collapse">
+      <div class="panel-body">
+    
+          
+              <input type="radio"  name="payment" value="1" onclick="toggleVisibility(document.getElementById('info1'),document.getElementById('info2'))">
+              <label for="cod">Cash On Delivery(COD)</label><br/>
+          <div class="alert alert-info" id="info1" style="display: none;">
+   <strong>Success!</strong> you have selected cash on delivery option
+</div>
+              
+     <input type="radio"  name="payment" value="2" onclick="toggleVisibility(document.getElementById('info2'),document.getElementById('info1'))">
+              <label for="cod">Credit/Debit</label><br/>
+          
+          <!-- credit card options mastero and visa.........................................-->
+          
+          <div class="row">
+               <div class="col-md-4">
+              <div class="container" id="info2" style="display:none;">
+             
+                  <h3>choose one..!</h3>
+          <ul>
+              <li><button type="submit" class="hvr-bubble-float-left" onclick="paymentGrid(this);" value="1"><img src="https://www.merchantequip.com/image/?logos=v&height=32" alt="Merchant Equipment Store Credit Card Logos"/>Visa Debit Card</button></li>
+              <li><button type="submit" class="hvr-bubble-float-left" onclick="paymentGrid(this);" value="2"><img src="https://www.merchantequip.com/image/?logos=m&height=32" alt="Merchant Equipment Store Credit Card Logos" />Mastero Debit Card</button></li>
+              </ul>
+                  </div>
+          
+          </div>
+          <!--payment div- ---------------------------------------->
+           <div class="col-md-8 col-lg-8">
+          <div class="container" id="paymentGrid" style="display: none;">
+   <strong>Success!</strong> you have selected Card payment option
+             
+    <div class="row">
+        <!-- You can make it whatever width you want. I'm making it full width
+             on <= small devices and 4/12 page width on >= medium devices -->
+        <div class=" col-xs-12 col-md-4">
+        
+        
+            <!-- CREDIT CARD FORM STARTS HERE -->
+             <span id="error1" style="color:red"></span>
+            <div class="panel panel-default credit-card-box">
+                <div class="panel-heading display-table" >
+                   
+                    <div class="row display-tr" >
+                        <h3 class="panel-title display-td" >Payment Details</h3>
+                        <div class="display-td" >                            
+                            <img class="img-responsive pull-right" src="http://i76.imgup.net/accepted_c22e0.png">
+                        </div>
+                    </div>                    
+                </div>
+                <div class="panel-body">
+                    <form role="form" id="payment-form" method="POST" action="javascript:void(0);">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="form-group">
+                                    <label for="cardNumber">CARD NUMBER</label>
+                                    <div class="input-group">
+                                        <input 
+                                            type="tel"
+                                            class="form-control"
+                                            name="cardNumber"
+                                            placeholder="Valid Card Number"
+                                            autocomplete="cc-number"
+                                               oninput="cardnumber(this)"
+                                            required autofocus 
+                                        />
+                                        <span class="input-group-addon"><i class="fa fa-credit-card"></i></span>
+                                    </div>
+                                </div>                            
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-7 col-md-7">
+                                <div class="form-group">
+                                    <label for="cardExpiry"><span class="hidden-xs">EXPIRATION</span><span class="visible-xs-inline">EXP</span> DATE</label>
+                                    <input 
+                                        type="tel" 
+                                        class="form-control" 
+                                        name="cardExpiry"
+                                        placeholder="MM / YY"
+                                        autocomplete="cc-exp"
+                                           
+                                        required 
+                                    />
+                                </div>
+                            </div>
+                            <div class="col-xs-5 col-md-5 pull-right">
+                                <div class="form-group">
+                                    <label for="cardCVC">CVV</label>
+                                    <input 
+                                        type="tel" 
+                                        class="form-control"
+                                        name="cardCVV"
+                                            id="cardCVV"
+                                        placeholder="CVV"
+                                        autocomplete="cc-csc"
+                                        required
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <button class="subscribe btn btn-success btn-lg btn-block" type="button" onclick="makePayment()">Make Payment</button>
+                            </div>
+                        </div>
+                        <div class="row" style="display:none;">
+                            <div class="col-xs-12">
+                                <p class="payment-errors"></p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>            
+</div>        
+        
+        </div>
+    </div>
+
+</div></div>
+        </div>
+      <button class="btn btn-success" type="submit" onclick="location.href='/tq'">continue</button>
+      </div>
+      
+      </div></div>
+      </div>
+      
+  

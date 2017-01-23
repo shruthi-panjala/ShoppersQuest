@@ -1,0 +1,85 @@
+
+<div class="container">
+    <table class="table table-striped">
+        <tr>
+            <td>
+                <img id="zoom_02" style="width:450px" src="{{product.url}}" data-zoom-image="{{product.url}}"/>
+                <br>
+            </td>
+            <td>
+                <div class="panel panel-warning">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">{{product.title}}</h3>
+                    </div>
+                    <div class="panel-body">
+                        <table class="table table-striped">
+                            <tr>
+                                <td>
+                                    <h4>Description</h4>
+                                </td>
+                                <td>
+                                    <div class="list-group">
+                                        {{description}}
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h4>Price</h4>
+                                </td>
+                                <td>
+                                    <h4>{{product.price}}</h4>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <div class="container">
+        <div class="col-md-2">
+            <a href="/add-to-cart/{{product.title}}"><button class="btn btn-success btn-lg" role="button" value="Add To Cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Add To Cart</button></a>
+        </div>
+        <div class="col-md-2">
+            <a href="/wish-list/{{product.title}}"><button class="btn btn-success btn-lg" role="button" value="Add To Wishlist"><i class="fa fa-list-ul" aria-hidden="true"></i> Add To Wishlist</button></a>
+        </div>
+    </div>
+</div>
+    <!--<div class="row vdivide">
+        <div class="col-md-5">
+            <div class="container">
+                <img id="zoom_02" style="width:450px" src="{{product.url}}" data-zoom-image="{{product.url}}"/>
+            </div>
+            <br>
+            
+        </div>
+        <div class="col-md-7">
+            <div class="panel panel-warning">
+                <div class="panel-heading">
+                    <h3 class="panel-title">{{product.title}}</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="row vdivide">
+                        <div class="col-md-4" style="font-size:20px">Price</div>    
+                        <div class="col-md-8">Rs.{{product.price}}</div>
+                    </div>
+                    <hr>
+                    <p>{{product.description}}</p>
+                </div>
+            </div>
+            <div class="container">
+                <div class="col-md-2">
+                    <a href="/add-to-cart/{{product.title}}"><button class="btn btn-success btn-lg" role="button" value="Add To Cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Add To Cart</button></a>
+                </div>
+                <div class="col-md-2">
+                    <a href="/wish-list/{{product.title}}"><button class="btn btn-success btn-lg" role="button" value="Add To Wishlist"><i class="fa fa-list-ul" aria-hidden="true"></i> Add To Wishlist</button></a>
+                </div>
+            </div>
+        </div>
+    </div>-->
+
+
+<script>
+    $("#zoom_02").elevateZoom({tint:true, tintColour:'#808080', tintOpacity:0.5});
+</script>

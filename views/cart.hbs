@@ -1,0 +1,67 @@
+<div class="container">
+    <h2 align="center"></h2>
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5><span class="fa fa-shopping-cart fa-2x"> Shopping Cart</span> </h5>
+                </div>
+                <div class="col-md-4 pull-right">
+                    <a href="/"><button type="button" class="btn btn-default btn-sm btn-block"><span class="fa fa-share fa-2x">Continue shopping</span> </button></a>
+                </div>
+            </div>
+        </div>
+        <!-- </div>-->
+        {{#if products}}
+            <div class="panel-body">    
+                {{#each products}}
+                    <div class="row" id="cart-row">
+                        <div class="col-md-3"><!-- image div -->
+                            <a href="/product/{{this.title}}"><img src="{{this.item.url}}" alt="No picture available" width="230px" ></a>
+                        </div>
+                        <div class="col-md-3"><!-- product details-->
+                            <a href="/product/{{this.title}}"><h5><span style="text-transform: none; font-size:25px">{{this.item.title}}</span></h5></a>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md-1">
+                                    <a href="/reduce/{{this.item.title}}"><button type="button"><i class="fa fa-minus"></i></button></a>
+                                </div>
+                                <div class="col-md-1">
+                                    <div class="badge" id="quantity" style="font-size:15px"><b>{{this.qty}}</b></div>
+                                </div>
+                                <div class="col-md-1">
+                                    <a href="/increase/{{this.item.title}}"><button type="button"><i class="fa fa-plus"></i></button></a>
+                                </div>
+				                <div class="col-md-6 ">
+				                    <h6 align="right"><strong style="font-size:20px">Rs.{{this.price}} <span class="text-muted"></span></strong></h6>
+				                </div>
+				                <div class="col-md-2">
+				                    <a href="/delete/{{this.item.title}}" class="pull-left"><button type="button" class="btn btn-link btn-xs"><i class="fa fa-trash-o fa-2x" aria-hidden="true"></i></button></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {{/each}}    
+            </div>
+            <div class="panel-footer">
+                <div class="row text-center">
+                    <div class="col-xs-8 col-md-8">
+                        <div class="col-md-4">
+						  <h4 class="text-right" style="font-size:20px">Total: <strong>Rs.{{totalPrice}}</strong></h4>
+                        </div>
+				    </div>
+                </div>
+                <div class="row text-center">
+                    <div class="col-xs-4 pull-right">
+                        <button type="button" class="btn btn-success btn-block" onclick="location.href='/checkout'"><i class="fa fa-money fa-2x">Checkout</i></button>
+				    </div>
+                </div>
+            </div>
+        {{ else }}
+            <div class="container"> 
+                <h3>No Items in cart!!!</h3>
+            </div>
+        {{/if}}
+    </div>      
+</div>

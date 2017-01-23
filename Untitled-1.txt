@@ -1,0 +1,1 @@
+mongodb://user6MY:XEbGiQ7w1LvaIIsc@mongodb/sampledb

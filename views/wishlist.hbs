@@ -1,0 +1,112 @@
+<!--<div class="container">
+<h1>WISHLIST</h1>
+<p>Here are your favourite items</p>
+</div>
+    
+    <div class="row">
+    <div class="col-md-12 col-sm-12">
+        <div class="panel panel-primary">
+  <div class="panel-heading">
+            <div class="row">
+      <div class="col-md-6">
+                <h5><span class="glyphicon glyphicon-star"></span> Wishlist</h5>
+                </div>
+                 <div class="col-md-4 pull-right">
+               <a href="/"></a> <button type="button" class="btn btn-default btn-sm btn-block">
+<span class="glyphicon glyphicon-share-alt"></span> Continue shopping
+</button>
+                </div>
+      </div>
+            </div>
+        </div>
+        <div class="panel-body">
+            {{# if products}}
+   <div class="row">
+       {{#each products}}
+            <div class="col-md-2">--><!-- image div -->
+               
+       <!--<img src="{{this.item.url}}" id="images" alt="No picture available">
+                  
+       </div>
+       <div class="col-md-4">--><!-- product details-->
+       <!--<h4><span style="text-transform: none;">{{this.item.title}}</span></h4>
+       </div>
+       <div class="col-md-6">-->
+      <!-- <div class="col-md-6 text-right">-->
+<!--<h4><strong>Rs.{{this.item.price}} <span class="text-muted"></span></strong></h4>-->
+<!--</div>-->
+<!--<div class="col-md-4">
+<input type="text" class="form-control input-sm" value={{this.qty}}>
+</div>-->
+<!--<span class="col-md-6 text-right">
+<button type="button" class="btn btn-link btn-xs">
+<span class="glyphicon glyphicon-trash"> </span>
+</button>
+       </span>
+            </div>
+       
+  </div>-->
+            
+        <!--    {{/each}}-->
+        <!--    <div class="row text-center">
+<div class="col-xs-9">
+<h4 class="text-right">Total <strong>{{totalPrice}}</strong></h4>
+</div>
+    </div>-->
+       <!-- <div class="panel-footer">
+<div class="row text-center">-->
+<!--
+<div class="col-xs-9">
+<h4 class="text-right">Total <strong>Rs.234</strong></h4>
+</div>
+-->
+<!--<div class="col-xs-3 pull-right">
+<button type="button" class="btn btn-success btn-block" onclick="location.href='/order'">
+Checkout
+</button>
+</div>
+</div>
+</div>
+</div>
+    </div>
+    {{else}}
+        <div class="container"> <div class="alert alert-success alert-dismissible" id="alertMsg" style="display:none;">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong>Hey!</strong> No items in wishlist....!
+  </div></div>
+    {{/if}}
+</div>-->
+
+<!--***********************************************************************************************************************************-->
+
+<head>
+    <h2 align="center">Your Wishlist!!!</h2>
+</head>
+<body>
+    <div class="container">
+        <div class="panel panel-info">
+            {{# if products}}
+                {{#each products}}
+                    <div class="panel-heading"><a href="product/{{this.item.title}}">{{this.item.title}}</a></div>
+                        <div class="panel-body">
+                            <table style="width:100%">
+                                <tr>
+                                    <td width="20%"><img style="height:200px" src="{{this.item.url}}"></td>
+                                    <td width="20%" style="text-align:center">Rs.{{this.item.price}}</td>
+                                    <td width="20%">
+                                        <a href="/add-to-cart/{{this.item.title}}" class="btn btn-success" style="text-align:center"role="button"><i class="fa fa-shopping-cart pull-left" style="font-size:20px" aria-hidden="true">Add to cart</i></a>
+                                        <a href="/deletewish/{{this.item.title}}"> <button type="button" class="btn btn-link btn-xs pull-right"><i class="fa fa-trash-o fa-2x"></i>
+                                        </button> </a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <br>
+                {{/each}}
+        {{else}}
+            <div class="alert alert-success alert-dismissible" id="alertMsg">
+                <h3>No items in wishlist....!</h3>
+            </div>
+        {{/if}}
+        </div>
+</div>

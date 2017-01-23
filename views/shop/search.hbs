@@ -1,0 +1,41 @@
+<div class="well" id="searchDiv">
+<span style="color:purple">
+<h3 align="center">{{content}}</h3></span></div>
+<div class="container">
+    <div class="col-md-9 col-sm-9">
+        <div class="single-product-area">
+            <div class="container">
+                {{# each products }}
+                    <div class="row">
+                        {{# each this}}
+                            <div class="col-md-4 col-sm-6">
+                                <a href="/product/{{this.title}}">
+                                <div class="thumbnail" style="border-color:transparent" id="single-shop-product">
+                                    <div class="product-upper">
+                                        <img src="{{this.url}}" alt="no picture available" width="250px" height="270px">
+                                    </div>
+                                    <h5 class="title"><b><i>{{this.title}}</i></b></h5>
+                                        <!--<div class="pull-left" id="price-padding" style="pading-left:150px">
+                                            <div><b>Rs.{{this.price}}</b></div>
+                                        </div>-->  
+                                    <div class="clearfix" id="cartBtn" >
+                                        <table style="width:100%">
+                                        <tr>
+                                            <td><a href="/add-to-cart/{{this.title}}" class="pull-left" >
+                                                <button class="btn btn-success btn-lg" role="button" ><i class="fa fa-shopping-cart pull-left" aria-hidden="true"></i><span>CART</span></button></a></td>
+                                            <td><div style="color:black"><b>Rs.{{this.price}}</b></div></td>
+                                            <td><a href="/wish-list/{{this.title}}" class="pull-right" >
+                                                <button type="submit" class="btn btn-inverse btn-lg pull-right" name="addToWish" id="addToWish" value="" onclick="" ><i class="glyphicon glyphicon-heart"></i><span>WISHLIST</span></button></a></td>
+                                        </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                                </a>
+                            </div>
+                        {{/each}}
+                    </div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</div>
