@@ -55,7 +55,9 @@ The above command generates following file:
   └── views
   
      ├── error.hbs
+     
      ├── index.hbs
+     
      └── layout.hbs
    
 7 directories, 9 files
