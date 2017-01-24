@@ -29,10 +29,15 @@ The above command generates following file:
 ==
 
  - ├── app.js
+ 
  -├── bin
+ 
   -│   └── www
+ 
  -├── package.json
+ 
  -├── public
+ 
  -│   ├── images
  -│   ├── javascripts
  -│   └── stylesheets
