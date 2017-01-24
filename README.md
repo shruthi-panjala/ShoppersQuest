@@ -24,6 +24,7 @@ To create project in expressJs using handlebars template engine
 The above command generates following file:
 ###File structure
 ==
+
  *├── app.js
  *├── bin
   *│   └── www
