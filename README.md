@@ -47,15 +47,17 @@ The above command generates following file:
      │       └── style.css
      
   ├── routes
-  │   ├── index.js
-  │   └── users.js
+  
+     ├── index.js
+  
+     └── users.js
+     
   └── views
+  
      ├── error.hbs
      ├── index.hbs
      └── layout.hbs
    
-   
-
 7 directories, 9 files
 
 ==
