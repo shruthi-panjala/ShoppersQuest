@@ -1,5 +1,5 @@
 # ShoppersQuest
-=====
+===
 This repository holds the source code on how to create a shopping cart with NodeJS/Express/MongoDB
 
 ### Home Page
