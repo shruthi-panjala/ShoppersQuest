@@ -25,7 +25,7 @@ The above command generates following file:
 ###File structure
 ==
 
- *├── app.js
+ *item├── app.js
  *├── bin
   *│   └── www
  *├── package.json
