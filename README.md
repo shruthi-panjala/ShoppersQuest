@@ -29,24 +29,25 @@ The above command generates following file:
 ==
 
  - ├── app.js
- *├── bin
-  *│   └── www
- *├── package.json
- *├── public
- *│   ├── images
- *│   ├── javascripts
- *│   └── stylesheets
- *│       └── style.css
- *├── routes
- *│   ├── index.js
- *│   └── users.js
- *└── views
-  *   ├── error.jade
-   * ├── index.jade
-   * └── layout.jade
+ -├── bin
+  -│   └── www
+ -├── package.json
+ -├── public
+ -│   ├── images
+ -│   ├── javascripts
+ -│   └── stylesheets
+ -│       └── style.css
+ -├── routes
+ -│   ├── index.js
+ -│   └── users.js
+ -└── views
+  -   ├── error.jade
+   - ├── index.jade
+   - └── layout.jade
 
 7 directories, 9 files
 
 ==
 ### More info
+==
 Go through the files in the project for better understanding of ecommerce portal
