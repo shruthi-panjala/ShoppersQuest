@@ -12,20 +12,23 @@ To view flow of project screenshot of each view is provided in the below link
 ==
 Download node at [nodejs.org](https://nodejs.org/en/) and install it, if you haven't already.
 To run npm use command
-                      $ npm start
+
+     $ npm start
 
 To install packages use command
-  npm install --save
+
+     npm install --save
 
 To create project in expressJs using handlebars template engine
-  $ npm install express-generator -g
-  $ express --view=hbs myapp
+
+     $ npm install express-generator -g
+     $ express --view=hbs myapp
 
 The above command generates following file:
 ###File structure
 ==
 
- *item├── app.js
+ - ├── app.js
  *├── bin
   *│   └── www
  *├── package.json
