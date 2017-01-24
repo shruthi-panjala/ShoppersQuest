@@ -24,19 +24,19 @@ To create project in expressJs using handlebars template engine
 The above command generates following file:
 ###File structure
 ==
-*├── app.js
-*├── bin
- *│   └── www
-*├── package.json
-*├── public
-*│   ├── images
-*│   ├── javascripts
-*│   └── stylesheets
-*│       └── style.css
-*├── routes
-*│   ├── index.js
-*│   └── users.js
-*└── views
+ *├── app.js
+ *├── bin
+  *│   └── www
+ *├── package.json
+ *├── public
+ *│   ├── images
+ *│   ├── javascripts
+ *│   └── stylesheets
+ *│       └── style.css
+ *├── routes
+ *│   ├── index.js
+ *│   └── users.js
+ *└── views
   *   ├── error.jade
    * ├── index.jade
    * └── layout.jade
