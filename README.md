@@ -1,5 +1,5 @@
 # ShoppersQuest
-===
+==
 This repository holds the source code on how to create a shopping cart with NodeJS/Express/MongoDB
 
 ### Home Page
@@ -12,7 +12,7 @@ To view flow of project screenshot of each view is provided in the below link
 ==
 Download node at [nodejs.org](https://nodejs.org/en/) and install it, if you haven't already.
 To run npm use command
-                ### npm start
+                      $ npm start
 
 To install packages use command
   npm install --save
@@ -23,22 +23,23 @@ To create project in expressJs using handlebars template engine
 
 The above command generates following file:
 ###File structure
-├── app.js
-├── bin
-│   └── www
-├── package.json
-├── public
-│   ├── images
-│   ├── javascripts
-│   └── stylesheets
-│       └── style.css
-├── routes
-│   ├── index.js
-│   └── users.js
-└── views
-    ├── error.jade
-    ├── index.jade
-    └── layout.jade
+==
+*├── app.js
+*├── bin
+ *│   └── www
+*├── package.json
+*├── public
+*│   ├── images
+*│   ├── javascripts
+*│   └── stylesheets
+*│       └── style.css
+*├── routes
+*│   ├── index.js
+*│   └── users.js
+*└── views
+  *   ├── error.jade
+   * ├── index.jade
+   * └── layout.jade
 
 7 directories, 9 files
 
