@@ -12,7 +12,7 @@ To view flow of project screenshot of each view is provided in the below link
 ==
 Download node at [nodejs.org](https://nodejs.org/en/) and install it, if you haven't already.
 To run npm use command
-  npm start
+                ### npm start
 
 To install packages use command
   npm install --save
